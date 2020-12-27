@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html manifest="jennboard.appcache">
+        
+
+<head>
+	<title>StavBot 420.69</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="ur so rude">
+	<meta name="description" content="HTML 5 soundboard.">
+	<meta name="keywords" content="HTML5, Mobile, Soundboard, IBM">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+		crossorigin="anonymous">
+	<style>
+		body {
+			margin-left: 20px;
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+
+		label {
+			font-weight: normal;
+		}
+
+		table, th, td {
+			border: 1px solid black;
+		}
+
+		td, th {
+			padding: 10px;
+		}
+            .btn { margin: 5px }
+    </style>
+</head>
+<body>
+                  <audio id="stavsoundboard" src="audio/"></audio>
+	<div class="container">
+		<div class="col-xs-12 col-sm-8">
+            <h2>StavBot</h2>
+
+            <button class="btn btn-primary btn-lg" onclick="Array.from(document.getElementsByTagName('audio')).forEach(function(e){e.pause(); e.currentTime=0;})">Silence</button>
+
+            <button class="btn btn-primary btn-lg" onclick="document.getElementById('stavsoundboard').play()">Soundboard</button>
+
+                  <div id="root"></div>
+			<hr>
+		    <footer>
+				<p>StavBot 69.420. ur gay. updated 4 dec. shout outs to chuck-the-plant, ololbutts, EV99, and everyone who's getting me timestamps</p>
+		    </footer>
+		</div>
+	</div>
+      <script>
+        window.data = [
+          {
+            name: "Regular Sounds",
+            items: [
+              { title: "Absolutely", file: "audio/Absolutely.mp3" },
+              ]
+          }
+        ];
+        var audioHTML = '';
+        for (var i = 0; i < window.data.length; i++) {
+          var category = window.data[i];
+          var itemHTML = '<h4>' + category.name + '</h4>';
+          for (var itemCount = 0; itemCount < category.items.length; itemCount++) {
+            var item = category.items[itemCount];
+            var title = item.title;
+            var file = item.file;
+            itemHTML += '<audio id="#file" src="#file"></audio><button class="btn btn-primary btn-lg"  onclick="document.getElementById(\'#file\').play()">#title</button>'
+              .replace(/#file/g, file)
+              .replace(/#title/g, title);
+          }
+          document.getElementById('root').innerHTML += itemHTML;
+        }
+
+      </script>
+</body>
+</html>
