@@ -1,4 +1,4 @@
-### Hi there 👋
+Just a quick little soundboard with random phrases from this girl named Jenn. 
 
 <!--
 **JennBoard/JennBoard** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
